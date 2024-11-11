@@ -366,6 +366,7 @@ button {
   padding-bottom: 120px;
 }
 .response-title {
+  margin-bottom: 92px;
 }
 .response-list {
   display: flex;
@@ -373,7 +374,6 @@ button {
 }
 .response-item {
   width: 360px;
-
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   box-shadow: 0 10px 100px 0 rgba(17, 17, 17, 0.1);
@@ -384,16 +384,16 @@ button {
 .response-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 18px;
   margin-bottom: 24px;
 }
 .respons-img {
+  position: absolute;
   transform: translateY(-50%);
 }
 .response-subtitle {
   text-align: center;
+  margin-top: 56px;
 }
 .response-text {
   text-align: center;
@@ -426,7 +426,7 @@ button {
   flex-direction: row;
 }
 .footer-paragraf {
-  width: 300px;
+  min-width: 300px;
   margin-right: 474px;
 }
 .footer-text {
