@@ -99,7 +99,9 @@
             moment of pure delight!</h1
           >
           <div class="hero-wrapper">
-            <button class="button-accent" type="button">Buy now</button>
+            <button class="button-accent" type="button" data-modal-open
+              >Buy now</button
+            >
             <button class="button-primary" type="button">How it’s made</button>
 
             <a class="desc hero-link" href="#benefits">scroll down</a>
@@ -595,7 +597,7 @@
               </li>
             </ul>
           </div>
-          <addressa class="contacts">
+          <addressa>
             <p class="desc contacts-text">Contact us</p>
             <ul class="contacts-list">
               <li class="contacts-item">
@@ -611,19 +613,120 @@
             </ul>
           </addressa>
         </div>
-
-        <ul class="footer-list">
-          <li class="footer-item">
-            <a class="desc footer-link" href="#home">Home</a>
-          </li>
-          <li class="footer-item">
-            <a class="desc footer-link" href="#made">How it’s made?</a>
-          </li>
-          <li class="footer-item">
-            <a class="desc footer-link" href="#reviews">Chocolate is loved</a>
-          </li>
-        </ul>
+        <div class="footer-down">
+          <ul class="footer-list">
+            <li class="footer-item">
+              <a class="desc footer-link" href="#home">Home</a>
+            </li>
+            <li class="footer-item">
+              <a class="desc footer-link" href="#made">How it’s made?</a>
+            </li>
+            <li class="footer-item">
+              <a class="desc footer-link" href="#reviews">Chocolate is loved</a>
+            </li>
+          </ul>
+          <div class="footer-email">
+            <form class="footer-email-form" name="email_from" autocomplete="on">
+              <label class="footer-email-label">
+                <input
+                  class="footer-email-input"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+              </label>
+              <button class="footer-email-btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
       </div>
     </footer>
+    <div class="backdrop is-open" data-modal>
+      <div class="modal">
+        <button class="modal-button" type="button" data-modal-close>
+          <svg class="icon-modal" width="16" height="16">
+            <use href="./images/icons.svg#icon-x-close"></use>
+          </svg>
+        </button>
+        <p class="title modal-title"
+          >LEAVE A REVIEW ABOUT <span class="span">OUR CHOCOLATE</span>
+        </p>
+        <form class="modal-form" name="modal_from">
+          <div class="modal-form-container">
+            <label class="modal-form-lable" for="user-name">Name</label>
+            <div class="modal-form-wrapper">
+              <input
+                class="modal-form-input"
+                type="text"
+                id="user-name"
+                minlength="2"
+                required
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-container">
+            <label class="modal-form-lable" for="user-email">Email</label>
+            <div class="modal-form-wrapper">
+              <input
+                class="modal-form-input"
+                type="email"
+                id="user-email"
+                required
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-container">
+            <label class="modal-form-lable" for="user-phone"
+              >Phone number</label
+            >
+            <div class="modal-form-wrapper">
+              <input class="modal-form-input" type="tel" id="user-phone" />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-container">
+            <label class="modal-form-lable" for="user-comment">Comment</label>
+            <div class="modal-form-wrapper">
+              <textarea
+                class="modal-form-textarea"
+                type="text"
+                id="user-comment"
+                placeholder="Enter text"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-form-agremeent">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              name="user-agreement"
+              id="user-agreement"
+              value="true"
+            />
+            <label class="modal-form-agremeent-text" for="user-agreement">
+              <span class="modal-form-checkbox">
+                <svg class="modal-form-checkbox-icon" width="10" height="10">
+                  <use href="./images/icons.svg#icon-checkbox"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="modal-form-agremeent-link" href="" target="_blank"
+                >Privacy Policy</a
+              >
+            </label>
+          </div>
+        </form>
+        <button class="button btn-accent" type="submit">Send</button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
