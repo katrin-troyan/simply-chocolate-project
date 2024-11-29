@@ -88,15 +88,18 @@
             </a>
           </li>
         </ul>
+        <svg class="logo-icons-menu" width="28" height="28">
+          <use href="./images/icons.svg#icon-menu-icon"></use>
+        </svg>
       </div>
     </header>
     <main>
       <!--Hero-->
       <section class="hero">
-        <div class="container hero-container">
+        <div class="hero-container container">
           <h1 class="hero-page"
-            >Treat yourself or a loved one to our&nbsp;finest ingredients for a
-            moment of pure delight!</h1
+            >Treat yourself or a loved one to&nbsp;our&nbsp;finest ingredients
+            for a moment of pure delight!</h1
           >
           <div class="hero-wrapper">
             <button class="button-accent" type="button" data-modal-open
@@ -104,10 +107,12 @@
             >
             <button class="button-primary" type="button">How it’s made</button>
 
-            <a class="desc hero-link" href="#benefits">scroll down</a>
-            <svg class="hero-icons" width="38" height="38">
-              <use href="./images/icons.svg#icon-arrow-down"></use>
-            </svg>
+            <a class="desc hero-link" href="#benefits"
+              >scroll down
+              <svg class="hero-icons" width="38" height="38">
+                <use href="./images/icons.svg#icon-arrow-down"></use>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -420,7 +425,7 @@
         </div>
       </section>
       <!--Bestsellers section-->
-      <section class="bestsellers">
+      <section class="bestsellers hidden">
         <div class="container">
           <h2 class="title bestsellers-title"
             ><span class="title span">Top</span> sellers</h2
@@ -486,7 +491,7 @@
         </div>
       </section>
       <!--response-->
-      <section class="response" id="reviews">
+      <section class="response hidden" id="reviews">
         <div class="container">
           <h2 class="title response-title"
             ><span class="title span">Chocolate</span> is loved</h2
@@ -544,7 +549,7 @@
       </section>
     </main>
     <!--Footer section-->
-    <footer class="footer-section">
+    <footer class="footer-section hidden">
       <div class="container footer-container">
         <div class="footer-wrapper">
           <div class="footer-paragraf">
@@ -641,7 +646,7 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop hidden" data-modal>
       <div class="modal">
         <button class="modal-button" type="button" data-modal-close>
           <svg class="icon-modal" width="16" height="16">
@@ -697,7 +702,6 @@
             <div class="modal-form-wrapper">
               <textarea
                 class="modal-form-textarea"
-                type="textarea"
                 id="user-comment"
                 placeholder="Enter text"
               ></textarea>
