@@ -2,10 +2,13 @@
   display: none;
 }
 /* #region base */
+html,
 body {
   font-family: Montserrat, sans-serif;
   background-color: #fafafa;
   color: #111111;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 p,
@@ -33,7 +36,6 @@ img {
   height: auto;
 }
 .container {
-  min-width: 320px;
   max-width: 375px;
   padding: 0 20px;
   margin: 0 auto;
@@ -404,7 +406,6 @@ button {
 .hero-link {
   display: inline-flex;
   align-items: center;
-
   gap: 12px;
   transition: 300ms ease-in;
   transition-property: color;
@@ -787,10 +788,23 @@ button {
 /* #endregion */
 
 /* #region bestsellers */
-.bestsellers-second,
-.bestsellers-third {
-  display: none;
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
+.bestsellers-list {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+.bestsellers-item {
+  flex: 0 0 100%;
+}
+.bestsellers-subtitle {
+  padding: 28px 0;
+}
+
 .bestsellers-img {
   border-radius: 15px 15px 0 0;
 }
@@ -840,45 +854,58 @@ button {
   padding: 24px 0;
   background-color: #fff;
 }
+.swipe-container-button {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+.swipe-button {
+  padding: 0px;
+  fill: transparent;
+  stroke: #fd9222;
+}
+.swipe-button:hover,
+.swipe-button:focus {
+  fill: #fd9222;
+  stroke: #fafafa;
+}
+.swipe-button-prev {
+  transform: scaleX(-1);
+}
+
 @media only screen and (min-width: 768px) {
-  .bestsellers-second {
-    display: block;
-  }
   .bestsellers-list {
-    display: flex;
     gap: 16px;
   }
   .bestsellers-item {
-    width: calc((100% - 16px) / 2);
-  }
-  .bestsellers-subtitle {
-    padding: 28px 0;
+    flex: 0 0 calc((100% - 32px) / 2);
   }
 }
 @media only screen and (min-width: 1168px) {
-  .bestsellers-third {
-    display: block;
+  .swipe-button {
+    display: none;
   }
   .bestsellers-item {
-    width: calc((100% - 2 * 16px) / 3);
+    flex: 0 0 calc((100% - 2 * 16px) / 3);
   }
 }
 /* #endregion */
 
 /* #region response */
-.respons-second,
-.respons-third {
-  display: none;
-}
 .response {
   padding-bottom: 80px;
 }
 .response-title {
-  margin-bottom: 74px;
+  margin-bottom: 32px;
 }
+
 .response-list {
   display: flex;
-  margin-bottom: 32px;
+  flex-direction: row;
+  transition: transform 0.4s ease;
+  will-change: transform;
+  margin-bottom: 8px;
 }
 .response-item {
   border: 1px solid rgba(17, 17, 17, 0.1);
@@ -887,14 +914,16 @@ button {
   background-color: #fff;
   padding: 56px 18px 42px;
   position: relative;
+  flex: 0 0 100%;
 }
-.respons-img {
+.response-img {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-42px);
+  left: 35%;
+  transform: translate -50% -50%;
 }
 .response-subtitle {
+  margin-top: 45px;
   text-align: center;
 }
 .response-text {
@@ -908,7 +937,7 @@ button {
   border-color: #fd9222;
   width: 165px;
   height: 41px;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 .response-button:hover,
 .response-button:focus {
@@ -916,14 +945,11 @@ button {
   color: #fff;
 }
 @media only screen and (min-width: 768px) {
-  .respons-second {
-    display: block;
-  }
   .response {
     padding-bottom: 100px;
   }
   .response-title {
-    margin-bottom: 92px;
+    margin-bottom: 50px;
   }
   .response-list {
     display: flex;
@@ -931,8 +957,7 @@ button {
     margin-bottom: 50px;
   }
   .response-item {
-    width: calc((100% - 16px) / 2);
-    padding: 56px 16px 42px;
+    flex: 0 0 calc((100% - 32px) / 2);
   }
   .response-button {
     font-size: 18px;
@@ -941,8 +966,8 @@ button {
   }
 }
 @media only screen and (min-width: 1168px) {
-  .respons-third {
-    display: block;
+  .swipe-button {
+    display: none;
   }
   .response {
     padding-bottom: 120px;
@@ -951,8 +976,7 @@ button {
     gap: 28px;
   }
   .response-item {
-    width: calc((100% - 28px * 2) / 3);
-    padding: 56px 24px 24px;
+    flex: 0 0 calc((100% - 2 * 32px) / 3);
   }
 }
 /* #endregion */
@@ -1032,8 +1056,8 @@ button {
 }
 .footer-email-form {
   display: flex;
-  align-items: flex-end;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
 }
 .footer-email-input {
   border: 1.5px solid rgba(255, 255, 255, 0.15);
@@ -1042,6 +1066,7 @@ button {
   width: 207px;
   height: 45px;
   background-color: transparent;
+  width: 100%;
 }
 .footer-email-input::placeholder {
   font-weight: 400;
@@ -1089,7 +1114,6 @@ button {
     margin-right: 40px;
     order: 1;
   }
-
   .contacts-content {
     order: 2;
   }
@@ -1113,6 +1137,12 @@ button {
     flex-direction: row;
     gap: 16px;
     margin-right: auto;
+  }
+  .footer-email-form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
   }
   .footer-email-input {
     padding: 14px 24px;
