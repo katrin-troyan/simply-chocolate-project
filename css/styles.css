@@ -789,8 +789,8 @@ button {
 
 /* #region bestsellers */
 .slider-wrapper {
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
 .bestsellers-list {
   display: flex;
@@ -859,6 +859,7 @@ button {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
+  margin-top: 8px;
 }
 .swipe-button {
   padding: 0px;
@@ -897,11 +898,12 @@ button {
   padding-bottom: 80px;
 }
 .response-title {
-  margin-bottom: 32px;
+  margin-bottom: 72px;
 }
 .response-list {
   display: flex;
   flex-direction: row;
+  gap: 16px;
   transition: transform 0.4s ease;
   will-change: transform;
   margin-bottom: 8px;
@@ -910,18 +912,19 @@ button {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   background-color: #fff;
-  padding: 56px 18px 42px;
+  padding: 56px 18px 32px;
   position: relative;
   flex: 0 0 100%;
 }
 .response-img {
   position: absolute;
-  top: 0;
-  left: 35%;
-  transform: translate -50% -50%;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
 }
 .response-subtitle {
-  margin-top: 45px;
   text-align: center;
 }
 .response-text {
@@ -946,9 +949,7 @@ button {
   .response {
     padding-bottom: 100px;
   }
-  .response-title {
-    margin-bottom: 50px;
-  }
+
   .response-list {
     display: flex;
     gap: 16px;
